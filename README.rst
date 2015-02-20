@@ -58,24 +58,24 @@ https://taskman.eionet.europa.eu/issues/22685
 
 - Point to the git repository containing this buildout, this way Jenkins will download the latest version of the tests from the repository
 
-- Check the "This build is parameterized" option and add the following parameters:
-    - NUMOFTHREADS: type "string" default value "1"
-    - LOOPCOUNT: type "string" default value "1"
-    - RAMPUPPERIOD: type "string" default value "1"
-    - SERVERNAME: type "string" default value "1"
-    - USERNAME: type "string" default value "USERNAME"
-    - PASSWORD: type "string" default value "PASSWORD"
+- Check the **This build is parameterized** option and add the following parameters:
+    - NUMOFTHREADS: type *string* default value *1*
+    - LOOPCOUNT: type *string* default value *1*
+    - RAMPUPPERIOD: type *string* default value *1*
+    - SERVERNAME: type *string* default value *1*
+    - USERNAME: type *string* default value *USERNAME*
+    - PASSWORD: type *string* default value *PASSWORD*
 
   This parameters will be asked to the user before the execution of each build.
 
-- Click on "Add build step" and select "Execute shell". Fill the command with the following::
+- Click on **Add build step** and select **Execute shell**. Fill the command with the following::
 
     python bootstrap.py
     ./bin/buildout -vv
     ./bin/logintest -JSERVERNAME=${SERVERNAME} -JUSERNAME=${USERNAME} -JPASSWORD=${PASSWORD} -JNUMOFTHREADS=${NUMOFTHREADS} -JLOOPCOUNT=${LOOPCOUNT} -JRAMPUPPERIOD=${RAMPUPPERIOD}
 
 
-- Replace ./bin/logintest, with each of the tests created in this buildout: logintest, editortest, reviewertest, eionetusertest and keep the rest of parameters. They will be filled with the user input on each build.
+- Replace ./bin/logintest, with each of the tests created in this buildout: *logintest*, *editortest*, *reviewertest*, *eionetusertest* and keep the rest of parameters. They will be filled with the user input on each build.
 
 - Click on **Add post-build action"** and select **Publish Performance test result report**.
     - Under **Add a new report** select JMeter and enter the name of the report file as stated in the buildout file, for instance, **report_logintest.jtl**
