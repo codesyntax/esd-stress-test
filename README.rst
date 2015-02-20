@@ -54,7 +54,7 @@ https://taskman.eionet.europa.eu/issues/22685
 
 - Install `Jenkins Performance plugin`_.
 
-- Create a new Job using the `Freestyle project` template.
+- Create a new Job using the **Freestyle project** template.
 
 - Point to the git repository containing this buildout, this way Jenkins will download the latest version of the tests from the repository
 
