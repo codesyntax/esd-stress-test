@@ -37,6 +37,11 @@
             <stringProp name="Argument.value">${__P(SERVERNAME)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="waiting-time" elementType="Argument">
+            <stringProp name="Argument.name">waiting-time</stringProp>
+            <stringProp name="Argument.value">${__P(WAITINGTIME)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -540,6 +545,10 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">${waiting-time}</stringProp>
+        </ConstantTimer>
         <hashTree/>
       </hashTree>
     </hashTree>
