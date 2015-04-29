@@ -29,7 +29,7 @@ The parameters that you need to set are the following:
 - JPASSWORD: valid EIONET username's password
 - JNUMOFTHREADS: number of threads to be used in the test
 - JLOOPCOUNT: number of repetitions of the test for each thread
-- JWAITINGTIME: waiting time between tests
+- JWAITINGTIME: waiting time between tests (in miliseconds)
 
 
 Running this tests with Jenkins
@@ -65,7 +65,7 @@ https://taskman.eionet.europa.eu/issues/22685
     - SERVERNAME: type *string* default value *1*
     - USERNAME: type *string* default value *USERNAME*
     - PASSWORD: type *string* default value *PASSWORD*
-    - WAITINGTIME: type *string* default value *1*
+    - WAITINGTIME: type *string* default value *1000*
 
 
   This parameters will be asked to the user before the execution of each build.
