@@ -29,12 +29,17 @@
           </elementProp>
           <elementProp name="rampup-period" elementType="Argument">
             <stringProp name="Argument.name">rampup-period</stringProp>
-            <stringProp name="Argument.value">${__P(RAMPUP-PERIOD)}</stringProp>
+            <stringProp name="Argument.value">${__P(NUMOFTHREADS)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="servername" elementType="Argument">
             <stringProp name="Argument.name">servername</stringProp>
             <stringProp name="Argument.value">${__P(SERVERNAME)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="waiting-time" elementType="Argument">
+            <stringProp name="Argument.name">waiting-time</stringProp>
+            <stringProp name="Argument.value">${__P(WAITINGTIME)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -380,6 +385,10 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">${waiting-time}</stringProp>
+          </ConstantTimer>
+          <hashTree/>
         </hashTree>
         <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
           <stringProp name="RegexExtractor.useHeaders">false</stringProp>
