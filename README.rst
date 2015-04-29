@@ -18,7 +18,7 @@ The generated scripts are the following::
 
 To run the tests manually, you need to pass the required parameters to each of the scripts::
 
-    $ ./bin/logintest -n -JSERVERNAME=esddemo.eea.europa.eu -JUSERNAME=EIONET-USER-NAME -JPASSWORD=PASSWORD -JNUMOFTHREADS=3 -JLOOPCOUNT=5 -JRAMPUPPERIOD=1
+    $ ./bin/logintest -n -JSERVERNAME=esddemo.eea.europa.eu -JUSERNAME=EIONET-USER-NAME -JPASSWORD=PASSWORD -JNUMOFTHREADS=3 -JLOOPCOUNT=5 -JWAITINGTIME=1
 
 This way, jmeter will create a results file called 'report_logintest.jtl'
 
@@ -29,7 +29,7 @@ The parameters that you need to set are the following:
 - JPASSWORD: valid EIONET username's password
 - JNUMOFTHREADS: number of threads to be used in the test
 - JLOOPCOUNT: number of repetitions of the test for each thread
-- JRAMPUP-PERIOD: waiting time between tests
+- JWAITINGTIME: waiting time between tests
 
 
 Running this tests with Jenkins
