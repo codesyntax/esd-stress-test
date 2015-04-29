@@ -385,9 +385,11 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">${waiting-time}</stringProp>
-          </ConstantTimer>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Timer" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">${waiting-time}</stringProp>
+          </TestAction>
           <hashTree/>
         </hashTree>
         <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
