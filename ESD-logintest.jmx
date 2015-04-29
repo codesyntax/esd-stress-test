@@ -24,7 +24,7 @@
           </elementProp>
           <elementProp name="rampup-period" elementType="Argument">
             <stringProp name="Argument.name">rampup-period</stringProp>
-            <stringProp name="Argument.value">${__P(RAMPUPPERIOD)}</stringProp>
+            <stringProp name="Argument.value">${__P(NUMOFTHREADS)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="loopcount" elementType="Argument">

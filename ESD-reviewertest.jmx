@@ -24,7 +24,7 @@
           </elementProp>
           <elementProp name="rampup-period" elementType="Argument">
             <stringProp name="Argument.name">rampup-period</stringProp>
-            <stringProp name="Argument.value">${__P(RAMPUPPERIOD)}</stringProp>
+            <stringProp name="Argument.value">${__P(NUMOFTHREADS)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="numofthreads" elementType="Argument">
@@ -35,6 +35,11 @@
           <elementProp name="servername" elementType="Argument">
             <stringProp name="Argument.name">servername</stringProp>
             <stringProp name="Argument.value">${__P(SERVERNAME)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="waiting-time" elementType="Argument">
+            <stringProp name="Argument.name">waiting-time</stringProp>
+            <stringProp name="Argument.value">${__P(WAITINGTIME)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -901,6 +906,10 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">${waiting-time}</stringProp>
+        </ConstantTimer>
         <hashTree/>
       </hashTree>
     </hashTree>
