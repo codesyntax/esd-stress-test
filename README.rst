@@ -46,9 +46,10 @@ https://taskman.eionet.europa.eu/issues/22685
     - username: ${__P(USERNAME)}
     - password: ${__P(PASSWORD)}
     - numofthreads: ${__P(NUMOFTHREADS)}
-    - rampup-period: ${__P(RAMPUPPERIOD)}
+    - rampup-period: ${__P(NUMOFTHREADS)}
     - loopcount: ${__P(LOOPCOUNT)}
     - servername: ${__P(SERVERNAME)}
+    - waiting-time: ${__P(WAITINGTIME)}
 
   This allows to pass the correct parameters to JMeter when the test is run. You will need to use these variables (${username}, ${password}, etc), each time you need to get those values in JMeter. For instance, in the "HTTP Request Defaults" configuration you need to set ${servername} instead of the real servername.
 
@@ -61,10 +62,11 @@ https://taskman.eionet.europa.eu/issues/22685
 - Check the **This build is parameterized** option and add the following parameters:
     - NUMOFTHREADS: type *string* default value *1*
     - LOOPCOUNT: type *string* default value *1*
-    - RAMPUPPERIOD: type *string* default value *1*
     - SERVERNAME: type *string* default value *1*
     - USERNAME: type *string* default value *USERNAME*
     - PASSWORD: type *string* default value *PASSWORD*
+    - WAITINGTIME: type *string* default value *1*
+
 
   This parameters will be asked to the user before the execution of each build.
 
@@ -72,7 +74,7 @@ https://taskman.eionet.europa.eu/issues/22685
 
     python bootstrap.py
     ./bin/buildout -vv
-    ./bin/logintest -JSERVERNAME=${SERVERNAME} -JUSERNAME=${USERNAME} -JPASSWORD=${PASSWORD} -JNUMOFTHREADS=${NUMOFTHREADS} -JLOOPCOUNT=${LOOPCOUNT} -JRAMPUPPERIOD=${RAMPUPPERIOD}
+    ./bin/logintest -JSERVERNAME=${SERVERNAME} -JUSERNAME=${USERNAME} -JPASSWORD=${PASSWORD} -JNUMOFTHREADS=${NUMOFTHREADS} -JLOOPCOUNT=${LOOPCOUNT} -JWAITINGTIME=${WAITINGTIME}
 
 
 - Replace ./bin/logintest, with each of the tests created in this buildout: *logintest*, *editortest*, *reviewertest*, *eionetusertest* and keep the rest of parameters. They will be filled with the user input on each build.
